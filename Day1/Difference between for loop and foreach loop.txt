@@ -1,0 +1,29 @@
+Difference between for loop and foreach loop is as follows:
+
+1.
+    - for loop iterates through items until a certain condition is true.
+   You give an initial statement, a condition for which the loop is to be iterated until it gets false, 
+   and a statement that will be executed after every successful block execution.
+
+    - foreach loop is used to iterate through items in collections (Lists, Arrays etc.). 
+   When you have a list of items, instead of using a for loop and iterate over the list using its index, 
+   you can directly access each element in the list using a foreach loop.
+
+
+2.
+    - for loop can be illustrated as 
+
+         int length = 100;  
+      for (int index = 1; index < length; index++)  
+      {  
+       ...............
+      }  
+
+    - foreach loop can be illustrated as 
+
+         int[] numbers={1,2,3,4,5}
+         foreach(int item in numbers)  
+            {  
+                item+=1;            
+            }  
+ 

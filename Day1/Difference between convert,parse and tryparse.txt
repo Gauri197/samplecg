@@ -1,0 +1,18 @@
+Difference between convert parse and tryparse in c# is as follows:
+
+1.
+   -The Convert.ToInt32 method uses Parse internally.
+   -The Parse method returns the converted number.
+   -TryParse method returns a boolean value that indicates whether the conversion succeeded,
+ and returns the converted number in an out parameter.
+
+
+2.  -  Convert ToInt32 is that passing a null value to int.
+    - When calling a Parse method, 
+ you should always use exception handling to catch a FormatException when the parse operation fails.
+    - whereas If the string isn't in a valid format, Parse throws an exception, but TryParse returns false.
+
+3.
+    -The Parse and TryParse methods ignore white space at the beginning and at the end of the string,
+ but all other characters must be characters that form the appropriate numeric type Eg. int,single,double.
+    
