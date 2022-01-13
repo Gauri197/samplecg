@@ -1,0 +1,22 @@
+ using System;  
+public class even  
+{  
+    public static void Main()
+{
+   int i,n;
+   
+	
+
+   Console.Write("Enter Numbers : ");
+   n= Convert.ToInt32(Console.ReadLine());    
+   Console.Write("\nThe even numbers are :");
+   for(i=1;i<=n;i++)
+   {
+	   if(i%2 ==0)
+	   {
+      Console.Write("\n {0} \n",i);
+   }
+  
+ }
+}
+}

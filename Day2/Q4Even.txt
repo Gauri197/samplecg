@@ -1,0 +1,21 @@
+ using System;  
+public class even  
+{  
+    public static void Main()
+{
+   int i,n;
+   
+	
+
+      
+   Console.Write("\nThe even numbers are :");
+   for(i=1;i<=10;i++)
+   {
+	   if(i%2 ==0)
+	   {
+      Console.Write("\n {0} \n",i);
+   }
+  
+ }
+}
+}

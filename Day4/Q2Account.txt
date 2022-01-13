@@ -1,0 +1,99 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleDay3
+{
+class Account
+{
+public int accno { get; set; }
+public string accname { get; set; }
+public double balance { get; set; }
+public Account(int accno = 23452, string accname = "Gauri", double balance = 36500.0)
+{
+this.accno = accno;
+this.accname = accname;
+this.balance = balance;
+}
+public void accDetails()
+{
+Console.WriteLine("Account no:{0},", accno);
+Console.WriteLine("Employee Name:{0},", accname);
+Console.WriteLine("Employee Salary:{0},", balance);
+Console.ReadLine();
+}
+	 public void transact()
+        {
+            Console.WriteLine(accname+" is transacting");
+
+        }
+        public void printBalance()
+        {
+            Console.WriteLine(accname+" Balance:"+this.balance);
+        }
+	 public override string ToString()
+        {
+            return "Account details: " + accno + " " + accname + " " + balance + " ";
+        }
+
+}
+class current : Account {
+
+public current (int accno,String accname,double balance) : base(accno, accname, balance)
+{
+
+}
+
+ public void Overdraw()
+        {
+            Console.WriteLine(accname+" has overdraw");
+        }
+}
+
+	
+
+
+class Saving:Account {
+        public Saving(int accno,String accname,double balance) : base(accno, accname, balance)
+        {
+
+        }
+
+        public void ConvertToFd()
+        {
+            Console.WriteLine(accname+" has converted to Fd");
+        }
+    }
+
+
+
+
+public class MyClass
+{
+public static void Main(String[] args)
+{
+Account a = new Account();
+current c = new current(45, "Hital", 56560.0);
+Saving s = new Saving(45, "Gauri", 66500.0);	
+	
+
+a.accDetails();
+Console.WriteLine("---------------------------------------");
+Console.WriteLine(s);
+  s.transact();
+  s.printBalance();
+  s.ConvertToFd();
+Console.WriteLine("------------------------------------");
+Console.WriteLine(c);
+  c.transact();
+  c.printBalance();
+  c.Overdraw();
+Console.WriteLine("-----------------------------------");
+Console.ReadLine();
+}
+
+
+}
+}

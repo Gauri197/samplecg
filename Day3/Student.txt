@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+public class Student
+{ 
+public int studId { get; set; }
+public string studName { get; set; }
+public double examfee { get; set; }
+public Student(int studId = 2, String studName = "Gauri", double examfee = 25000.0)
+{
+this.studId = studId;
+this.studName = studName;
+this.examfee = examfee;
+}
+public void displayDetails()
+{
+Console.WriteLine("Student Id:{0},", studId);
+Console.WriteLine("Student Name:{0},", studName);
+Console.WriteLine("Student fees:{0},", examfee);
+Console.ReadLine();
+}
+}
+public class DayScholar : Student {
+public double transportFee;
+public DayScholar (int studId,String studName,double examfee ,double transportFee) : base(studId, studName, examfee)
+{
+
+this.transportFee = transportFee;
+}
+
+public void DayScholardetails()
+{
+Console.WriteLine("studIdId:{0},", studId);
+Console.WriteLine("studName:{0},", studName);
+Console.WriteLine("Student examfee:{0},", examfee);
+Console.WriteLine("Student transportFee:{0},", transportFee);
+}
+public double payFee(double examfee ,double transportFee, double payFee)
+{ 
+double total= examfee+transportFee;
+return(total-payFee);
+}
+}
+
+class Hosteller : Student
+{
+public double hostelFee;
+public Hosteller(int studId,String studName,double examfee ,double hostelFee) : base(studId, studName, examfee)
+{
+this.hostelFee = hostelFee;
+
+
+}
+public void HostellerDetails()
+{
+Console.WriteLine("Hosteller Id:{0},", studId);
+Console.WriteLine("Hosteller Name:{0},", studName);
+Console.WriteLine("Hosteller Examfee:{0},", examfee);
+Console.WriteLine("Hosteller Hostell fee:{0},", hostelFee);
+
+
+}
+}
+
+public class RunClass
+{
+public static void Main(String[] args)
+{
+Student s = new Student();
+DayScholar d = new DayScholar(4, "Sai", 20000.0, 1500.0);
+Hosteller h = new Hosteller(8, "Mayuresh", 23000.0, 5000.0);
+s.displayDetails();
+Console.WriteLine("---------------------------------------");
+double remain1= d.payFee(d.transportFee,d.examfee,3000);
+Console.WriteLine("Remaining amount to be paid:{0}",remain1);
+d.DayScholardetails();
+Console.WriteLine("------------------------------------");
+h.HostellerDetails();
+Console.WriteLine("-----------------------------------");
+Console.ReadLine();
+}
+
+
+}
+}

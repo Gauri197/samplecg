@@ -1,0 +1,66 @@
+/******************************************************************************
+
+                            Online C# Compiler.
+                Code, Compile, Run and Debug C# program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+using System;
+using System.Collections.Generic;
+public class Game {
+ public static void Main() {
+    Console.WriteLine("Hi there, this is the game for you");
+    Console.WriteLine("                          ");
+    
+    Console.WriteLine("Will give one word to you, you need to create multiple words using all the letters from that given word");
+    Console.WriteLine("                         ");
+    Console.WriteLine("Basic Instruction need to follow \n"+
+    "1.Do not repeat the words \n"+
+    "2.You will get 1 mark for each correct word \n"+
+    "3.If you done and want to Exit then enter Quit");
+    string[] words={"master","stream","maters","armets","tamers","mat","rat","Eat","Seat"};
+    Console.WriteLine("\nYour word is ");
+    Console.WriteLine("M A S T E R \n");
+	 
+    string word;
+    int ct=0;
+    HashSet<string> uniqueword =new HashSet<string>();
+
+    Console.WriteLine("Create multiple words from the letters of above word");
+    
+    do{
+    
+    word = Console.ReadLine();
+		Console.WriteLine("counting your word "+ words.Length);
+    for(int i=0;i<words.Length;i++)
+    { if(word.Equals(words[i]) && (!uniqueword.Contains(words[i])))
+    {
+        Console.WriteLine("word is correct \n");
+        ct++;
+        uniqueword.Add(words[i]);
+        break;
+        
+    }
+    else if(word.Equals(words[i]) && (!uniqueword.Contains(words[i])))
+    {
+        Console.WriteLine("word is correct but should not be repeated\n");
+        break;
+        
+    }
+    else if((i==words.Length-1) && (!word.Equals(words[i])))
+    {
+        Console.WriteLine("word is incorrect \n");
+        break;
+    }
+	}
+
+    
+    }
+	 
+    while(!word.Equals("Quit"));
+        Console.WriteLine("your score is:{0}",ct);
+	Console.WriteLine("Thank you for participation\n");
+ }
+	 
+}
